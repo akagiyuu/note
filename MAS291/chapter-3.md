@@ -6,7 +6,7 @@
 	- D. 0.300
 	- E. None of the other choices is correct
 	
-	**Solution**\
+	**Solution**
 	$X$ is the number of boys in ten births
 	$$
 	X \sim B(n = 10, p = 0.5)
@@ -23,7 +23,7 @@
 	- D. 0.0096
 	- E. None of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of items inspected until the first defective item found
 	$$
 	X \sim G(p = 0.01)
@@ -34,16 +34,16 @@
 	$\Rightarrow$ Chọn D
 
 3. There are calculation errors in 3 out of a package of 12 invoices. An auditor checks a random sample of 7 invoices from the package. What are the probabilities of finding all 3 errors in the sample?
-	- A. 0.1591
+	-  A. 0.1591
 	- B. 0.1996
 	- C. 0.8327
 	- D. 0.0031
 	- E. None of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of errors in the sample
 	$$
-k	X \sim HG(N=12,K=3,n=7)
+	X \sim HG(N=12,K=3,n=7)
 	$$
 	$$
 	P(X = 3) = \frac{\binom{K}{3} \cdot \binom{N - K}{n - 3}}{\binom{N}{n}} \approx 0.1591
@@ -52,7 +52,7 @@ k	X \sim HG(N=12,K=3,n=7)
 
 4. Let X and Y be two discrete uniform distributions with E(X) = 1 and E(Y) = 10. Find the value of E(10X - Y).
 
-	**Solution**\
+	**Solution**
 	$$
 	E(10X-Y) = 10E(X) - E(Y) = 0
 	$$
@@ -64,7 +64,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.212
 	- E. none of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of times that Cuong stops at traffic lights
 	$$
 	X \sim P(\lambda = 5)
@@ -81,7 +81,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. Real numbers from 0 to 10
 	- E. Real numbers from 0 to 15
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of parts in a sample of ten parts that do not conform to customer requirements
 	$$
 	X \sim HG(N=500, K = 15, n = 10)
@@ -97,7 +97,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.257
 	- E. 0.0004952
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of not good cells in the sample
 	$$
 	X \sim HG(N = 52, K = 13, n = 5)
@@ -114,7 +114,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.5	
 	- E. None of the others choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number rolled
 	$$
 	X \sim U\{1,6\}
@@ -126,7 +126,7 @@ k	X \sim HG(N=12,K=3,n=7)
 
 9. Let X be a continuous random variable with E(X) = 10 and $E(X^2)$ = 100. Find V(X).
 
-	**Solution**\
+	**Solution**
 	$$
 	V(X) = E(X^2) - E(x)^2 = 0
 	$$
@@ -137,7 +137,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- C. 0.8320
 	- D. 0.9833
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of call until the first connected call
 	$$
 	X \sim G(p=0.02)
@@ -154,7 +154,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.0137
 	- E. none of the other choices is correct
 
-	**Solution*8
+	**Solution**
 	$X$ is the number of students whom will arrive
 	$$
 	X \sim P(\lambda = 3)
@@ -166,7 +166,7 @@ k	X \sim HG(N=12,K=3,n=7)
 
 12. Suppose that a random variable X has the discrete uniform distribution on the integers 10,...,20. Find P(X = 7).
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim U\{ 10, 20\}
 	$$
@@ -181,7 +181,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.0620
 	- E. 0.875
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of message arrived within one hour
 	$$
 	X \sim P(\lambda = 5)
@@ -198,7 +198,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.0132 and 0.99998
 	- E. 0.00021 and 0.99979
 
-	**Solution**\
+	**Solution**
 	$$
 	P(X= 3) = \frac{\binom{K}{3} \binom{N-K}{n - 3}}{\binom{N}{n}} \approx 0.0132
 	$$
@@ -213,7 +213,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- C. 0.4332
 	- D. 0.6756
 
-	**Solution**\
+	**Solution**
 	$X$ is the number trials until the first successful
 	$$
 	X \sim G(p = 0.8)
@@ -229,7 +229,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- C. All of the others.
 	- D. $P(X= 5)  = 0.2461$
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim B(n = 10, p = 0.5)
 	$$
@@ -251,7 +251,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 50 and 850
 	- E. 49.5 and 850
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim U\{ 1, 99 \}
 	$$
@@ -270,7 +270,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.221
 	- E. 0.221
 
-	**Solution**\
+	**Solution**
 
 	$X$ is the number of not good cells in the sample
 	$$
@@ -288,7 +288,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. None of the other choices is correct
 	- E. 0.4406
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of message arrived per hour
 	$$
 	X \sim P(\lambda = 5)
@@ -305,7 +305,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.38
 	- E. 0.63
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of defective item
 	$$
 	X \sim B(n = 10, p = 0.2)
@@ -321,7 +321,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- C. 17 and 102
 	- D. 18 and 102
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim U\{ 1, 35 \}
 	$$
@@ -340,7 +340,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.702 and 1
 	- E. 0.0702 and 0
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim B(n = 10, p = 0.1)
 	$$
@@ -358,7 +358,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. None of the other choices is correct
 	- E. 0.05503
 
-	**Solution**\
+	**Solution**
 	$$
 	X \sim P(\lambda = 0.604)
 	$$
@@ -374,7 +374,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.2
 	- E. None of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$$
 	P(X=5) = 0.25
 	$$
@@ -387,7 +387,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 3
 	- E. None of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of hit until hitting the target
 	$$
 	X \sim G(p=0.7)
@@ -404,7 +404,7 @@ k	X \sim HG(N=12,K=3,n=7)
 	- D. 0.25
 	- E. None of the other choices is correct
 
-	**Solution**\
+	**Solution**
 	$X$ is the number of failed students in the sample
 	$$
 	X \sim HG(N=800,K=200,n=10)
