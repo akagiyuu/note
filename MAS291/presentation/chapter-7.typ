@@ -42,7 +42,7 @@ The probability of a statistic is called a sampling distribution.
 - A point estimate of some population parameter $theta$ is a single numerical value $hat(theta)$ of a statistic $hat(Theta)$.
 - The statistic $hat(Theta)$ is called the point estimator.
 - Some reasonable point estimate
-    - $hat(u) = overline(x)$
+    - $hat(mu) = overline(x)$
     - $hat(sigma^2) = s^2$
     - $hat(p) = x / n$
     - $hat(mu_1) - hat(mu_2) = overline(x_1) - overline(x_2)$
