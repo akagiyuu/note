@@ -350,6 +350,7 @@
     $
         P(X < 8) = sum_(x=0)^8 binom(n, x) p^x (1-p)^(n-x) approx 1
     $
+    *Answer*: A
 
 + Let the random variable X be as Poisson distribution with mean of 0.604. Find the probability that X = 1.
     + 0.41270
