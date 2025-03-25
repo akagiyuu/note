@@ -64,25 +64,16 @@ The study utilizes three datasets, each containing emails labeled as spam (1) or
 
 ```python
 import pandas as pd
-import os
 
-# Enumerate files in the Kaggle input directory
-for dirname, _, filenames in os.walk("/kaggle/input"):
-    for filename in filenames:
-        print(os.path.join(dirname, filename))
+data1 = pd.read_csv("data/lingSpam.csv")
+data2 = pd.read_csv("data/enronSpamSubset.csv")
+data3 = pd.read_csv("data/completeSpamAssassin.csv")
 
-# Load datasets
-data1 = pd.read_csv("/kaggle/input/email-spam-dataset/lingSpam.csv")
-data2 = pd.read_csv("/kaggle/input/email-spam-dataset/enronSpamSubset.csv")
-data3 = pd.read_csv("/kaggle/input/email-spam-dataset/completeSpamAssassin.csv")
-
-# Drop unnecessary columns and concatenate datasets
 data1.drop("Unnamed: 0", inplace=True, axis=1)
 data2.drop(["Unnamed: 0", "Unnamed: 0.1"], inplace=True, axis=1)
 data3.drop("Unnamed: 0", inplace=True, axis=1)
 data = pd.concat([data1, data2, data3], axis=0)
 
-# Remove missing entries
 data.dropna(inplace=True)
 ```
 
@@ -196,7 +187,7 @@ end_time = time.time()
 print(round(end_time - start_time, 2))
 ```
 
-The training process is computationally efficient, completing in approximately 5.14 seconds.
+The training process is computationally efficient, completing in approximately 3.51 seconds.
 
 == Model Evaluation
 
@@ -230,7 +221,10 @@ sns.heatmap(conf, annot=True, fmt=".1f", linewidths=1.5)
 plt.show()
 ```
 
-Placeholder: [insert image: "ConfusionMatrix.png" {width: 0.7w}]
+#figure(
+    image("img/confusion-matrix.png"),
+    caption: "Confusion Matrix"
+)
 
 = Conclusion and Future Work
 
