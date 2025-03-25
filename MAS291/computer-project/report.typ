@@ -94,7 +94,7 @@ The resulting dataset comprises approximately 18,650 entries, each with a body t
         "3", "Subject: email 57 million people for $ 99\n \n...", "1",
         "4", "Subject: don't miss these !\n \n attention ! ...", "1",
     ),
-    caption: [Example data]
+    caption: [Example data],
 )
 
 = Text Preprocessing and Feature Engineering
@@ -207,24 +207,21 @@ The training process is computationally efficient, completing in approximately 3
 
 == Model Evaluation
 
-The classifier’s performance is measured using accuracy and confusion matrix metrics.
+First, the confusion matrix is computed and visualized as a heatmap to provide insight into the distribution of prediction errors. Let:
+- $"TP"$ denote the number of true positives
+- $"TN"$ denote the number of true negatives
+- $"FP"$ denote the number of false positives
+- $"FN"$ denote the number of false negatives
 
-Let:
-- $"TP"$ denote the number of true positives,
-- $"TN"$ denote the number of true negatives,
-- $"FP"$ denote the number of false positives, and
-- $"FN"$ denote the number of false negatives.
-Accuracy is defined by:
+The confusion matrix is defined as:
 $
-    "Accuracy" = ("TP" + "TN") / ("TP" + "TN" + "FP" + "FN")
+    mat(
+    "TN", "TP";
+    "FN", "TP";
+)
 $
-The following code computes and visualizes these metrics:
 
-```python
-print("Accuracy:", NB.score(x_test, y_test))
-```
-
-An accuracy of approximately 82% is achieved. Additionally, the confusion matrix is generated and visualized:
+The following code computes and visualizes the confusion matrix:
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -232,19 +229,53 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 y_pred = NB.predict(x_test)
-conf = confusion_matrix(y_true=y_test, y_pred=y_pred)
-sns.heatmap(conf, annot=True, fmt=".1f", linewidths=1.5)
+
+cm = confusion_matrix(y_true=y_test, y_pred=y_pred)
+
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
 plt.show()
 ```
 
 #figure(
     image("img/confusion-matrix.png"),
-    caption: "Confusion Matrix",
+    caption: [Confusion Matrix]
 )
+
+#figure(
+    image("img/normalized-confusion-matrix.png"),
+    caption: [Normalized Confusion Matrix]
+)
+
+After visualizing the confusion matrix, we calculate key evaluation metrics. The evaluation metrics are defined as follows:
+- Accuracy:
+$
+    "Accuracy" = ("TP" + "TN") / ("TP" + "TN" + "FP" + "FN")
+$
+- F1-Score:
+$
+    "F1-Score" = 2 dot 1 / ("Precision"^(-1) + "Recall"^(-1))
+$
+#h(1cm) #text(style: "italic")[where:]
+$
+    "Precision" = "TP" / ("TP" + "FP") ", " "Recall" = "TP" / ("TP" + "FN") 
+$
+
+The corresponding code computes these metrics:
+
+```python
+from sklearn.metrics import f1_score
+
+print("Accuracy:", NB.score(x_test, y_test))
+print("F1-score:", f1_score(y_test, y_pred))
+```
+
+Based on the run, the model achieved an accuracy of approximately 82% and an F1-Score of approximately 80%.
 
 = Conclusion and Future Work
 
-This study provided a systematic exploration of a spam filtering system built upon the Gaussian Naive Bayes algorithm. The report detailed the stages of data ingestion, rigorous text preprocessing, and feature extraction via a bag-of-words model. The Gaussian Naive Bayes classifier, underpinned by sound probabilistic theory, was trained and evaluated, yielding an accuracy of approximately 82%.
+This study provided a systematic exploration of a spam filtering system built upon the Gaussian Naive Bayes algorithm. The report detailed the stages of data ingestion, rigorous text preprocessing, and feature extraction via a bag-of-words model. The Gaussian Naive Bayes classifier, underpinned by sound probabilistic theory, was trained and evaluated, yielding an accuracy of approximately 82% and f1-score of 80%.
 
 Future research directions may include:
 - Integrating additional features such as email metadata.
