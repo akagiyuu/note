@@ -1,4 +1,3 @@
-#import "lib.typ": *
 #import "@preview/clean-math-paper:0.2.0": *
 
 #let date = datetime.today().display("[month repr:long] [day], [year]")
@@ -15,7 +14,7 @@
     abstract: [
         This report presents a comprehensive study on the implementation of a spam filtering system using the Gaussian Naive Bayes algorithm. The objective is to accurately classify emails as spam or ham by leveraging probabilistic methods underpinned by statistical theory. The document details each stage of the process—from data ingestion and preprocessing through feature extraction and model evaluation. In addition, the report elucidates the theoretical foundations of Bayes’ Theorem and its application within a Gaussian framework. Experimental results demonstrate that the proposed approach attains competitive accuracy with efficient training and inference times.
     ],
-    keywords: ("First keyword", "Second keyword", "etc."),
+    keywords: ("Email", "Spam", "Naive Bayes'", "Gaussian Naive Bayes'"),
 )
 
 #counter(heading).update(0)
@@ -224,6 +223,7 @@ An accuracy of approximately 82% is achieved. Additionally, the confusion matrix
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 y_pred = NB.predict(x_test)
 conf = confusion_matrix(y_true=y_test, y_pred=y_pred)
 sns.heatmap(conf, annot=True, fmt=".1f", linewidths=1.5)
