@@ -1,0 +1,17 @@
+scikit-learn:
+  type: web
+  title: "scikit-learn Documentation."
+  url: 
+    value: "https://scikit-learn.org/"
+
+nltk:
+  type: web
+  title: "Natural Language Toolkit (NLTK)"
+  url: 
+    value: "https://www.nltk.org/"
+
+which-naive-bayes:
+  type: proceedings
+  title: Spam Filtering with Naive Bayes - Which Naive Bayes?
+  author: ["Metsis", "Vangelis and Androutsopoulos", "Ion and Paliouras", "Georgios"]
+  date: 2006
