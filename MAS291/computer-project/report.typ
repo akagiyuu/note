@@ -1,4 +1,9 @@
 #import "@preview/clean-math-paper:0.2.0": *
+#import "@preview/codly:1.2.0": *
+#import "@preview/codly-languages:0.1.1": *
+#show: codly-init.with()
+
+#codly(languages: codly-languages)
 
 #let date = datetime.today().display("[month repr:long] [day], [year]")
 #show: template.with(
@@ -79,6 +84,19 @@ data.dropna(inplace=True)
 
 The resulting dataset comprises approximately 18,650 entries, each with a body text and a corresponding label.
 
+#figure(
+    table(
+        columns: 3,
+        [*Id*], [*Body*], [*Label*],
+        "0", "Subject: great part-time or summer job !\n \n ...", "1",
+        "1", "Subject: auto insurance rates too high ?\n \n ...", "1",
+        "2", "Subject: do want the best and economical hunti...", "1",
+        "3", "Subject: email 57 million people for $ 99\n \n...", "1",
+        "4", "Subject: don't miss these !\n \n attention ! ...", "1",
+    ),
+    caption: [Example data]
+)
+
 = Text Preprocessing and Feature Engineering
 
 Textual data undergoes extensive preprocessing to enhance the performance of the classification model. The steps are as follows:
@@ -93,8 +111,6 @@ import re
 x = data["Body"]
 x_clnd_link = [re.sub(r"http\S+", "", text) for text in x]
 ```
-
-Placeholder: [insert image: "BeforeAfter_LinkCleaning.png" {width: 0.7w}]
 
 == Removal of Non-Alphanumeric Characters
 
@@ -223,7 +239,7 @@ plt.show()
 
 #figure(
     image("img/confusion-matrix.png"),
-    caption: "Confusion Matrix"
+    caption: "Confusion Matrix",
 )
 
 = Conclusion and Future Work
