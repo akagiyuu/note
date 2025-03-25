@@ -1,9 +1,4 @@
 #import "@preview/clean-math-paper:0.2.0": *
-#import "@preview/codly:1.2.0": *
-#import "@preview/codly-languages:0.1.1": *
-#show: codly-init.with()
-
-#codly(languages: codly-languages)
 
 #let date = datetime.today().display("[month repr:long] [day], [year]")
 #show: template.with(
