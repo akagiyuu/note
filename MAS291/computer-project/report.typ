@@ -6,7 +6,7 @@
 #codly(languages: codly-languages)
 
 #let date = datetime.today().display("[month repr:long] [day], [year]")
-#show: template.with( 
+#show: template.with(
     title: [Filtering Spam E-Mails #linebreak() A Gaussian Naive Bayes Approach],
     authors: (
         (name: "Huynh Minh Khang - SE192197", affiliation-id: 1),
@@ -174,7 +174,7 @@ A bag-of-words representation is constructed using scikit-learn’s CountVectori
 from sklearn.feature_extraction.text import CountVectorizer
 
 vectorizer = CountVectorizer(max_features=20000)
-x_features = vectorizer.fit_transform([" ".join(text) for text in x_prepared]).toarray()
+x_features = vectorizer.fit_transform([" ".join(text) for text in x_prepared]).toarray( )
 ```
 
 Subsequently, the dataset is partitioned into training and testing subsets:
@@ -194,7 +194,29 @@ The Gaussian Naive Bayes classifier is employed to model the probability distrib
 
 == Model Training
 
-The Gaussian Naive Bayes model is instantiated and trained on the feature matrix:
+During training, the Gaussian Naive Bayes classifier estimates the necessary parameters from the training data for each class $C_k$ and each feature $i$.
+
++ *Class Prior:*
+    The prior probability of class $C_k$ is calculated as:
+    $
+        P(C_k) = N_C_k / N
+    $
+    where $N_C_k$ is the number of training samples in class $C_k$ and $N$ is the total number of training samples.
+
++ *Mean ($mu_(C_k, i)$):*
+    The mean of feature $i$ for class $C_k$ is computed by:
+    $
+        mu_(C_k,i) = 1 / N_C_k sum_(j: y_j=C_k) x_(j,i)
+    $
+    where $x_i_j$ is the $i^"th"$ feature value of the $j^"th"$ sample in class $C_k$.
+
++ *Variance ($sigma_(C_k, i)^2$):*
+   The variance of feature $i$ for class $C_k$ is given by:
+    $
+        sigma_(C_k,i)^2 = 1 / N_C_k sum_(j: y_j=C_k) (x_(j,i) - mu_(C_k, i))^2
+    $
+
+Below is the corresponding Python snippet that performs model training:
 
 ```python
 import time
