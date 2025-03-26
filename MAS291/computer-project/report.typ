@@ -6,7 +6,7 @@
 #codly(languages: codly-languages)
 
 #let date = datetime.today().display("[month repr:long] [day], [year]")
-#show: template.with(
+#show: template.with( 
     title: [Filtering Spam E-Mails #linebreak() A Gaussian Naive Bayes Approach],
     authors: (
         (name: "Huynh Minh Khang - SE192197", affiliation-id: 1),
@@ -60,7 +60,11 @@ $
 
 The decision rule for classification is thus:
 $
-    hat(C) = "argmax"_C [log P(C) + log P(X bar C)]
+    hat(C)
+    &= "argmax"_C [(P(C)P(C | X)) / P(X)] \
+    &= "argmax"_C [P(C)P(C | X)] \
+    &= "argmax"_C [log (P(C)P(C | X))] \
+    &= "argmax"_C [log P(C) + log P(X bar C)]
 $
 
 = Data Acquisition and Consolidation
@@ -240,12 +244,12 @@ plt.show()
 
 #figure(
     image("img/confusion-matrix.png"),
-    caption: [Confusion Matrix]
+    caption: [Confusion Matrix],
 )
 
 #figure(
     image("img/normalized-confusion-matrix.png"),
-    caption: [Normalized Confusion Matrix]
+    caption: [Normalized Confusion Matrix],
 )
 
 After visualizing the confusion matrix, we calculate key evaluation metrics. The evaluation metrics are defined as follows:
@@ -259,7 +263,7 @@ $
 $
 #h(1cm) #text(style: "italic")[where:]
 $
-    "Precision" = "TP" / ("TP" + "FP") ", " "Recall" = "TP" / ("TP" + "FN") 
+    "Precision" = "TP" / ("TP" + "FP") ", " "Recall" = "TP" / ("TP" + "FN")
 $
 
 The corresponding code computes these metrics:
