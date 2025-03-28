@@ -15,3 +15,5 @@
 #include "chapters/chapter-9.typ"
 #pagebreak()
 #include "chapters/chapter-10.typ"
+#pagebreak()
+#include "chapters/chapter-11.typ"
