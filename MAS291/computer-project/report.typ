@@ -33,13 +33,14 @@ This report delineates the methodology, from data collection and preprocessing t
 = Mathematical Background
 Bayes’ Theorem is a cornerstone of probability theory and provides a mechanism for updating prior beliefs in light of new evidence. The theorem is expressed as:
 $
-    P(A bar B) = (P(B bar A) dot P(A)) / P(B)
+    P(C bar X) = (P(X bar C) dot P(C)) / P(X)
 $
 
 In the context of spam filtering:
-- *Posterior Probability ($P(A bar B)$):* The probability that an email is spam given the observed features.
-- *Likelihood ($P(B bar A)$):* The probability of observing the given features assuming the email is spam.
-- *Prior Probability ($P(A)$):* The initial probability of an email being spam.
+- *Posterior Probability ($P(C bar X)$):* The probability that an email is spam given the observed features.
+- *Likelihood ($P(X bar C)$):* The probability of observing the given features assuming the email is spam.
+- *Prior Probability ($P(C)$):* The initial probability of an email being spam.
+- *Evidence ($P(X)$):* The probability of these features.
 
 Naive Bayes algorithms calculate these probabilities under the assumption of feature independence, selecting the class with the highest posterior probability. In the Gaussian variant, each continuous feature is assumed to follow a normal distribution, thereby accommodating numerical data effectively.
 
@@ -194,26 +195,26 @@ The Gaussian Naive Bayes classifier is employed to model the probability distrib
 
 == Model Training
 
-During training, the Gaussian Naive Bayes classifier estimates the necessary parameters from the training data for each class $C_k$ and each feature $i$.
+During training, the Gaussian Naive Bayes classifier estimates the necessary parameters from the training data for each class $C$ and each feature $i$.
 
 + *Class Prior:*
-    The prior probability of class $C_k$ is calculated as:
+    The prior probability of class $C$ is calculated as:
     $
-        P(C_k) = N_C_k / N
+        P(C) = N_C / N
     $
-    where $N_C_k$ is the number of training samples in class $C_k$ and $N$ is the total number of training samples.
+    where $N_C$ is the number of training samples in class $C$ and $N$ is the total number of training samples.
 
-+ *Mean ($mu_(C_k, i)$):*
-    The mean of feature $i$ for class $C_k$ is computed by:
++ *Mean ($mu_(C, i)$):*
+    The mean of feature $i$ for class $C$ is computed by:
     $
-        mu_(C_k,i) = 1 / N_C_k sum_(j: y_j=C_k) x_(j,i)
+        mu_(C,i) = 1 / N_C sum_(j: y_j=C) x_(j,i)
     $
-    where $x_i_j$ is the $i^"th"$ feature value of the $j^"th"$ sample in class $C_k$.
+    where $x_i_j$ is the $i^"th"$ feature value of the $j^"th"$ sample in class $C$.
 
-+ *Variance ($sigma_(C_k, i)^2$):*
-   The variance of feature $i$ for class $C_k$ is given by:
++ *Variance ($sigma_(C, i)^2$):*
+   The variance of feature $i$ for class $C$ is given by:
     $
-        sigma_(C_k,i)^2 = 1 / N_C_k sum_(j: y_j=C_k) (x_(j,i) - mu_(C_k, i))^2
+        sigma_(C,i)^2 = 1 / N_C sum_(j: y_j=C) (x_(j,i) - mu_(C, i))^2
     $
 
 Below is the corresponding Python snippet that performs model training:
